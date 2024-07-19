@@ -1,0 +1,16 @@
+{% extends 'gamestore/base.html' %}
+
+{% block content %}
+    <h1>{{ game.title }}</h1>
+    <p><strong>description"</strong> {{ game.description }}</p>
+    <p><strong>genre:</strong> {{ game.genre }}</p>
+    <p><strong>price:</strong> {{ game.price }}</p>
+    <p><strong>release date:</strong> {{ game.release_date }}</p>
+    <p><strong>platforms:</strong>
+        <ul>
+            {% for platform in game.platforms.all %}
+                <li>{{ platform.name }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+{% endblock %}

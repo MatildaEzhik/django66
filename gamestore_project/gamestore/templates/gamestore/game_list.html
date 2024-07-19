@@ -1,0 +1,14 @@
+{% extends 'gamestore/base.html' %}
+
+{% block content %}
+    <h1>list of games</h1>
+    <ul>
+        {% for game in games %}
+            <li>
+                <a href="{% url 'game-detail' game.pk %}">{{ game.title }}</a>
+            </li>
+        {% empty %}
+            <li>no games yet</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
